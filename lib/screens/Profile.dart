@@ -24,7 +24,7 @@ class _ProfileState extends State<Profile> {
             children: [Padding(
               padding: const EdgeInsets.only(left: 20.0,bottom: 20,top: 20),
               child: CircleAvatar(
-              radius: 70,
+              radius: MediaQuery.of(context).size.width*0.16,
               child: Padding(
               padding: const EdgeInsets.all(8.0),
               child: Text("A",style: TextStyle(fontSize: 70),),

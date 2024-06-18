@@ -19,8 +19,8 @@ void main() async{
     options: const FirebaseOptions(
       apiKey: 'AIzaSyAZ2lronLBSH46jivw0FqK_EjymJduB0m8',
       appId: "1:736939890442:android:a1c3c1459d39f4031a0cf3",
-      messagingSenderId: '736939890442',
-      projectId: '736939890442',
+    messagingSenderId: '736939890442',
+      projectId: 'e-learn-24cce',
         storageBucket: "gs://e-learn-24cce.appspot.com"
 
     ),

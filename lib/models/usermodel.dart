@@ -8,7 +8,7 @@ class User{
   final String email ;
   final List interest ;
   final Map bookmark ;
-  final List history ;
+  final Map history ;
   final Map progress;
 
 const User({required this.progress, required this.uid, required this.username, required this.phone_no, required this.email, required this.interest, required this.bookmark, required this.history});
@@ -39,6 +39,18 @@ static User fromSnap(DocumentSnapshot  snap){
     "history": history,
     "progress": progress,
   };
+
+   User Updatebookmark(Map value){
+    return User(progress: progress,
+        uid: uid,
+        username: username,
+        phone_no: phone_no,
+        email: email,
+        interest: interest,
+        bookmark: value,
+        history: history);
+  }
+
 }
 
 

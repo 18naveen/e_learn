@@ -53,9 +53,17 @@ class FireService{
                   uid: cred.user!.uid,
                    phone_no: phoneNumber,
                   interest: [],
-                  bookmark: {},
+                  bookmark: {
+                    "module":[],
+                    "blog":[],
+                    "video":[],
+                  },
                   email: '',
-                  history: [],
+                  history: {
+                    "module":"",
+                    "blog":"",
+                    "video":"",
+                  },
                   progress: {"module":0},
                 );
                 // Remove the dialog box
@@ -107,16 +115,17 @@ class FireService{
   }
 
 
-  Future<List<String>> getLessons(String genre)async{
+  Future<List> getLessons(String genre)async{
 
-    DocumentSnapshot documentSnapshot =
-    await _firestore.collection('content').doc(genre).get();
+    DocumentSnapshot documentSnapshot = await _firestore.collection('content').doc(genre).get();
     print(documentSnapshot.id);
-    print("documentSnapshot.id");
-   var snapshot = documentSnapshot.data() as Map<String, dynamic>;
+    // print();
 
+   // var snapshot = documentSnapshot.data() as Map<String, dynamic>;
+   var snapshot= await documentSnapshot.data() as Map<String, dynamic>;
 
     return snapshot["files"];
+    // return ["nothing"];
   }
 
 
